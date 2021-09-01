@@ -26,6 +26,8 @@ Import it to your project
 import 'package:calendar_agenda/calendar_agenda.dart';
 ```
 
+![](https://github.com/sud0su/calendar_agenda/blob/main/assets/demo.gif?raw=true)
+
 # How to use?
 
 Use the **CalendarAgenda** Widget
