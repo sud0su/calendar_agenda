@@ -1,14 +1,82 @@
-# calendar_agenda
+**Calendar agenda widget with a lot of customizable styles.**
 
-A new Flutter project.
+<p align="left">
+<a href="https://github.com/sud0su/calendar_agenda"><img src="https://img.shields.io/pub/v/calendar_agenda.svg" alt="Pub Package"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
+</p>
 
-## Getting Started
+# Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+1. Depend on it
+Add it to your package's pubspec.yaml file
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  calendar_agenda: version
+```
+2. Install it
+Install packages from the command line
+```sh
+flutter pub get
+```
+3. Import it
+Import it to your project
+```dart
+import 'package:calendar_agenda/calendar_agenda.dart';
+```
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+# How to use?
+
+Use the **CalendarAgenda** Widget
+```dart
+CalendarAgenda(
+initialDate: DateTime.now(),
+firstDate: DateTime.now().subtract(Duration(days: 140)),
+lastDate: DateTime.now().add(Duration(days: 4)),
+onDateSelected: (date) {
+print(date);
+},
+)
+```
+
+# Props
+
+| Props  | Types  | Required  | defaultValues  |
+| ------------ | ------------ | ------------ |  ------------ |
+| initialDate  | DateTime  | True  | |
+| firstDate  |  DateTime | True  | |
+| lastDate  | DateTime  | True  | |
+| onDateSelected  | Funtion  | False  | |
+| backgroundColor  | Color?  | False  | |
+| selectedDayLogo  | ImageProvider\<Object>?  | False  | |
+| controller  | CalendarAgendaController?  | False  | |
+| selectedDateColor  | Color?  | False  | Colors.black |
+| dateColor  | Color?  | False  | Colors.white |
+| calendarBackground  | Color?  | False  |Colors.white |
+| calendarEventSelectedColor  | Color?  | False  | Colors.white |
+| calendarEventColor  | Color?  | False  | Colors.blue |
+| locale  | String?  | False  | 'en' |
+| leading  | Widget?  | False  | |
+| appbar  | bool  | False  | False |
+| events  | List\<DateTime>?  | False  | |
+| fullCalendar  | bool  | False  | True |
+| fullCalendarScroll  | FullCalendarScroll  | False  |FullCalendarScroll.vertical |
+| fullCalendarDay  | WeekDay  | False  | WeekDay.short |
+| weekDay  | WeekDay  | False  | WeekDay.short |
+| selectedDayPosition  | SelectedDayPosition  | False  | SelectedDayPosition.left |
+
+---
+
+## Donate
+You like the package ? Buy me a coffee :)
+
+
+<a href="https://ko-fi.com/sud0su" target="_blank">
+    <img src="https://raw.githubusercontent.com/hacktons/convex_bottom_bar/master/doc/donate-kofi1.png" alt="buymeacoffe" style="vertical-align:top; margin:8px" height="40">
+</a>
+  
+<a href="https://www.buymeacoffee.com/sud0su" target="_blank">
+    <img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg" alt="buymeacoffe" style="vertical-align:top; margin:8px" height="40">
+</a>
+  
