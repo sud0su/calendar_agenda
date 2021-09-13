@@ -130,6 +130,7 @@ class CalendarAgendaState extends State<CalendarAgenda>
       return Container(
         width: MediaQuery.of(context).size.width,
         height: widget.appbar ? 125 : 100,
+        padding: EdgeInsets.all(5),
         alignment: Alignment.bottomCenter,
         child: ScrollablePositionedList.builder(
             padding: _dates.length < 5
@@ -163,7 +164,7 @@ class CalendarAgendaState extends State<CalendarAgenda>
                       onTap: () => _goToActualDay(index),
                       child: Container(
                         height: 100.0,
-                        width: MediaQuery.of(context).size.width / 5 - 4.0,
+                        width: MediaQuery.of(context).size.width / 5 - 5.0,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.0),
                           color: isSelected ? Colors.white : null,
@@ -268,56 +269,59 @@ class CalendarAgendaState extends State<CalendarAgenda>
 
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: widget.appbar ? 200 : 150.0,
+      height: widget.appbar ? 210 : 150.0,
       child: Stack(
         children: [
           Positioned(
             top: 0.0,
             child: Container(
               width: MediaQuery.of(context).size.width,
-              height: 180.0,
+              height: 190.0,
               color: backgroundColor,
             ),
           ),
           Positioned(
-              top: widget.appbar ? 50.0 : 20.0,
-              child: Padding(
-                padding: EdgeInsets.only(right: padding, left: 10),
-                child: Container(
-                    width: MediaQuery.of(context).size.width - (padding * 2),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        leading,
-                        GestureDetector(
-                          onTap: () => widget.fullCalendar!
-                              ? _showFullCalendar(_locale, widget.weekDay)
-                              : null,
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.calendar_today,
-                                size: 18.0,
-                                color: Colors.white,
-                              ),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              Text(
-                                DateFormat.yMMMM(Locale(_locale).toString())
-                                    .format(_selectedDate!),
-                                style: TextStyle(
-                                    fontSize: 18.0,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ],
+            top: widget.appbar ? 50.0 : 20.0,
+            child: Padding(
+              padding: EdgeInsets.only(right: padding, left: 10),
+              child: Container(
+                width: MediaQuery.of(context).size.width - padding,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    leading,
+                    GestureDetector(
+                      onTap: () => widget.fullCalendar!
+                          ? _showFullCalendar(_locale, widget.weekDay)
+                          : null,
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.calendar_today,
+                            size: 18.0,
+                            color: Colors.white,
                           ),
-                        ),
-                      ],
-                    )),
-              )),
+                          SizedBox(
+                            width: 10.0,
+                          ),
+                          Text(
+                            DateFormat.yMMMM(Locale(_locale).toString())
+                                .format(_selectedDate!),
+                            style: TextStyle(
+                              fontSize: 18.0,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            textAlign: TextAlign.end,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
           Positioned(
             bottom: 0.0,
             child: dayList(),

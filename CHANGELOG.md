@@ -1,3 +1,7 @@
+## [0.0.2] - 2021-13-09
+
+* Fixing alignment bug
+
 ## [0.0.1] - 2021-01-09
 
 * Add color customization
