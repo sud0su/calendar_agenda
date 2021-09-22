@@ -67,7 +67,7 @@ class _ExamplePageState extends State<ExamplePage> {
         initialDate: DateTime.now(),
         calendarEventColor: Colors.green,
         firstDate: DateTime.now().subtract(Duration(days: 140)),
-        lastDate: DateTime.now().add(Duration(days: 4)),
+        lastDate: DateTime.now().add(Duration(days: 60)),
         events: List.generate(
             100,
             (index) => DateTime.now()
@@ -101,9 +101,17 @@ class _ExamplePageState extends State<ExamplePage> {
             ),
             CalendarAgenda(
               controller: _calendarAgendaControllerNotAppBar,
-              leading: Text("Agenda anda hari ini adalah sebagai berikut",
-                  style: TextStyle(color: Colors.white)),
-              fullCalendar: false,
+              leading: SizedBox(
+                width: MediaQuery.of(context).size.width * 0.3,
+                child: Text(
+                  "Agenda anda hari ini adalah sebagai berikut",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              // fullCalendar: false,
               locale: 'en',
               weekDay: WeekDay.long,
               fullCalendarDay: WeekDay.short,

@@ -1,3 +1,8 @@
+## [0.0.2+2] - 2021-22-09
+
+* Add go to selected date in full calendar mode
+* fixing bug in full calendar layout
+  
 ## [0.0.2+1] - 2021-22-09
 
 * fixing bug show/hide fullCalendar

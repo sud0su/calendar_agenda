@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import 'typedata.dart';
 
@@ -42,10 +43,11 @@ class _FullCalendarState extends State<FullCalendar> {
   late DateTime endDate;
 
   late DateTime startDate;
+  late int _initialPage;
 
   List<String>? _events = [];
 
-  PageController _horizontalScroll = new PageController();
+  late PageController _horizontalScroll;
 
   void initState() {
     setState(() {
@@ -103,6 +105,14 @@ class _FullCalendarState extends State<FullCalendar> {
       }
 
       months.sort((b, a) => a!.compareTo(b!));
+
+      final _index = months.indexWhere((element) =>
+          element!.month == widget.selectedDate!.month &&
+          element.year == widget.selectedDate!.year);
+
+      _initialPage = _index;
+      _horizontalScroll = PageController(initialPage: _initialPage);
+
       return Container(
         padding: EdgeInsets.fromLTRB(25, 10.0, 25, 20.0),
         child: widget.calendarScroll == FullCalendarScroll.horizontal
@@ -174,30 +184,30 @@ class _FullCalendarState extends State<FullCalendar> {
                       child: widget.calendarBackground,
                     ),
                   ),
-                  ListView.builder(
-                      physics: BouncingScrollPhysics(),
-                      reverse: true,
-                      shrinkWrap: true,
-                      scrollDirection: Axis.vertical,
-                      itemCount: months.length,
-                      itemBuilder: (context, index) {
-                        DateTime? date = months[index];
-                        List<DateTime?> daysOfMonth = [];
-                        for (var item in dates) {
-                          if (date!.month == item!.month &&
-                              date.year == item.year) {
-                            daysOfMonth.add(item);
-                          }
+                  ScrollablePositionedList.builder(
+                    initialScrollIndex: _index,
+                    itemCount: months.length,
+                    reverse: true,
+                    physics: BouncingScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      DateTime? date = months[index];
+                      List<DateTime?> daysOfMonth = [];
+                      for (var item in dates) {
+                        if (date!.month == item!.month &&
+                            date.year == item.year) {
+                          daysOfMonth.add(item);
                         }
+                      }
 
-                        bool isLast = index == 0;
+                      bool isLast = index == 0;
 
-                        return Container(
-                          padding: EdgeInsets.only(bottom: isLast ? 0.0 : 25.0),
-                          child: month(daysOfMonth, width, widget.locale,
-                              widget.fullCalendarDay),
-                        );
-                      }),
+                      return Container(
+                        padding: EdgeInsets.only(bottom: isLast ? 0.0 : 25.0),
+                        child: month(daysOfMonth, width, widget.locale,
+                            widget.fullCalendarDay),
+                      );
+                    },
+                  ),
                 ],
               ),
       );
