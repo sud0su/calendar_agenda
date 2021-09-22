@@ -2,6 +2,7 @@
 
 * Add go to selected date in full calendar mode
 * fixing bug in full calendar layout
+* update the example of a package
   
 ## [0.0.2+1] - 2021-22-09
 
