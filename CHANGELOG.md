@@ -1,3 +1,8 @@
+## [0.0.2+1] - 2021-22-09
+
+* fixing bug show/hide fullCalendar
+* fixing day list width
+
 ## [0.0.2] - 2021-13-09
 
 * Fixing alignment bug

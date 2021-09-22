@@ -101,8 +101,9 @@ class _ExamplePageState extends State<ExamplePage> {
             ),
             CalendarAgenda(
               controller: _calendarAgendaControllerNotAppBar,
-              leading: Text("Agenda anda hari ini",
+              leading: Text("Agenda anda hari ini adalah sebagai berikut",
                   style: TextStyle(color: Colors.white)),
+              fullCalendar: false,
               locale: 'en',
               weekDay: WeekDay.long,
               fullCalendarDay: WeekDay.short,

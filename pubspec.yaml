@@ -1,6 +1,6 @@
 name: calendar_agenda
 description: Calendar agenda widget with a lot of customizable styles, also can be put as appbar widget.
-version: 0.0.2
+version: 0.0.2+1
 homepage: https://github.com/sud0su/calendar_agenda
 
 environment:

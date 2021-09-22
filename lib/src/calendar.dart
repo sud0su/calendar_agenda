@@ -159,12 +159,12 @@ class CalendarAgendaState extends State<CalendarAgenda>
                   alignment: Alignment.center,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                        vertical: 10.0, horizontal: 5.0),
+                        vertical: 5.0, horizontal: 5.0),
                     child: GestureDetector(
                       onTap: () => _goToActualDay(index),
                       child: Container(
                         height: 100.0,
-                        width: MediaQuery.of(context).size.width / 5 - 5.0,
+                        width: MediaQuery.of(context).size.width / 5 - 10,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.0),
                           color: isSelected ? Colors.white : null,
@@ -290,33 +290,35 @@ class CalendarAgendaState extends State<CalendarAgenda>
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     leading,
-                    GestureDetector(
-                      onTap: () => widget.fullCalendar!
-                          ? _showFullCalendar(_locale, widget.weekDay)
-                          : null,
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.calendar_today,
-                            size: 18.0,
-                            color: Colors.white,
-                          ),
-                          SizedBox(
-                            width: 10.0,
-                          ),
-                          Text(
-                            DateFormat.yMMMM(Locale(_locale).toString())
-                                .format(_selectedDate!),
-                            style: TextStyle(
-                              fontSize: 18.0,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w400,
+                    widget.fullCalendar!
+                        ? GestureDetector(
+                            onTap: () => widget.fullCalendar!
+                                ? _showFullCalendar(_locale, widget.weekDay)
+                                : null,
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.calendar_today,
+                                  size: 18.0,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Text(
+                                  DateFormat.yMMMM(Locale(_locale).toString())
+                                      .format(_selectedDate!),
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                  textAlign: TextAlign.end,
+                                ),
+                              ],
                             ),
-                            textAlign: TextAlign.end,
-                          ),
-                        ],
-                      ),
-                    ),
+                          )
+                        : SizedBox(),
                   ],
                 ),
               ),
