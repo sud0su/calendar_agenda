@@ -26,6 +26,17 @@ Import it to your project
 import 'package:calendar_agenda/calendar_agenda.dart';
 ```
 
+ SelectedDayPosition.center         |  SelectedDayPosition.Left      | SelectedDayPosition.Right
+:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/sud0su/calendar_agenda/blob/main/assets/selectedDayCenter.png?raw=true) | ![](https://github.com/sud0su/calendar_agenda/blob/main/assets/selectedDayLeft.png?raw=true) | ![](https://github.com/sud0su/calendar_agenda/blob/main/assets/selectedDayRight.png?raw=true)
+
+ FullCalendarScroll.vertical         |  FullCalendarScroll.horizontal
+:-------------------------:|:-------------------------:
+![](https://github.com/sud0su/calendar_agenda/blob/main/assets/FullCalendarScrollVertical.png?raw=true) | ![](https://github.com/sud0su/calendar_agenda/blob/main/assets/FullCalendarScrollHorizontal.png?raw=true)
+
+
+### package demo
+
 ![](https://github.com/sud0su/calendar_agenda/blob/main/assets/demo.gif?raw=true)
 
 # How to use?
