@@ -140,7 +140,11 @@ class CalendarAgendaState extends State<CalendarAgenda>
                         10)
                 : const EdgeInsets.symmetric(horizontal: 10),
             initialScrollIndex: _daySelectedIndex ?? 0,
-            initialAlignment: _scrollAlignment,
+            // initialAlignment: _scrollAlignment,
+            initialAlignment:
+                widget.selectedDayPosition == SelectedDayPosition.center
+                    ? 78 / 200
+                    : _scrollAlignment,
             scrollDirection: Axis.horizontal,
             reverse: widget.selectedDayPosition == SelectedDayPosition.left
                 ? false
@@ -443,7 +447,9 @@ class CalendarAgendaState extends State<CalendarAgenda>
   void _moveToDayIndex(int index) {
     _scrollController.scrollTo(
       index: index,
-      alignment: _scrollAlignment,
+      alignment: widget.selectedDayPosition == SelectedDayPosition.center
+          ? 78 / 200
+          : _scrollAlignment,
       duration: Duration(milliseconds: 500),
       curve: Curves.easeInOut,
     );

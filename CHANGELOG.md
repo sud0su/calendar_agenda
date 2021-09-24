@@ -1,3 +1,8 @@
+## [0.0.2+3] - 2021-24-09
+
+* add center parameter to SelectedDayPosition
+* Update README.md
+  
 ## [0.0.2+2] - 2021-22-09
 
 * Add go to selected date in full calendar mode
