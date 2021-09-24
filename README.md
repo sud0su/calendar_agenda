@@ -35,7 +35,7 @@ import 'package:calendar_agenda/calendar_agenda.dart';
 ![](https://github.com/sud0su/calendar_agenda/blob/main/assets/FullCalendarScrollVertical.png?raw=true) | ![](https://github.com/sud0su/calendar_agenda/blob/main/assets/FullCalendarScrollHorizontal.png?raw=true)
 
 
-### package demo
+### Demo
 
 ![](https://github.com/sud0su/calendar_agenda/blob/main/assets/demo.gif?raw=true)
 
