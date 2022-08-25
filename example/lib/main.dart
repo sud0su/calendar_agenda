@@ -15,6 +15,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.blue,
+      ),
       home: ExamplePage(),
     );
   }
@@ -63,7 +67,8 @@ class _ExamplePageState extends State<ExamplePage> {
         fullCalendarScroll: FullCalendarScroll.horizontal,
         fullCalendarDay: WeekDay.long,
         selectedDateColor: Colors.green.shade900,
-        locale: 'id',
+        dateColor: Colors.white,
+        locale: 'en',
         initialDate: DateTime.now(),
         calendarEventColor: Colors.green,
         firstDate: DateTime.now().subtract(Duration(days: 140)),
