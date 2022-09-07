@@ -81,6 +81,16 @@ print(date);
 
 ---
 
+
+
+## Thank you
+Special thanks goes to all contributors to this package. Make sure to check them out.<br />
+
+<a href="https://github.com/sud0su/calendar_agenda/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sud0su/calendar_agenda" />
+</a>
+
+
 ## Donate
 You like the package ? Buy me a coffee :)
 
