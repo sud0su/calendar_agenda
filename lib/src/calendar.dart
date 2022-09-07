@@ -404,7 +404,7 @@ class CalendarAgendaState extends State<CalendarAgenda>
                   startDate: widget.firstDate,
                   endDate: endDate,
                   padding: padding,
-                  dateColor: Colors.black,
+                  dateColor: widget.dateColor,
                   dateSelectedBg: widget.calendarEventColor,
                   dateSelectedColor: widget.calendarEventSelectedColor,
                   events: _eventDates,
