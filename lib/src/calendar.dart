@@ -22,6 +22,7 @@ class CalendarAgenda extends StatefulWidget implements PreferredSizeWidget {
   final SelectedDayPosition selectedDayPosition;
   final Color? selectedDateColor;
   final Color? dateColor;
+  final Color? headerDateColor;
   final Color? calendarBackground;
   final Color? calendarEventSelectedColor;
   final Color? calendarEventColor;
@@ -50,6 +51,7 @@ class CalendarAgenda extends StatefulWidget implements PreferredSizeWidget {
     this.controller,
     this.selectedDateColor = Colors.black,
     this.dateColor = Colors.white,
+    this.headerDateColor = Colors.white,
     this.calendarBackground = Colors.white,
     this.calendarEventSelectedColor = Colors.white,
     this.calendarEventColor = Colors.blue,
@@ -238,7 +240,7 @@ class CalendarAgendaState extends State<CalendarAgenda>
                                   fontSize: 22.0,
                                   color: isSelected
                                       ? widget.selectedDateColor
-                                      : widget.dateColor,
+                                      : widget.headerDateColor,
                                   fontWeight: isSelected
                                       ? FontWeight.bold
                                       : FontWeight.w500),
@@ -254,7 +256,7 @@ class CalendarAgendaState extends State<CalendarAgenda>
                                 fontSize: 12.0,
                                 color: isSelected
                                     ? widget.selectedDateColor
-                                    : widget.dateColor,
+                                    : widget.headerDateColor,
                                 fontWeight: isSelected
                                     ? FontWeight.bold
                                     : FontWeight.w400,
